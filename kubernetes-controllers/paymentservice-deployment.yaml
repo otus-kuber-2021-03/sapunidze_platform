@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment
+  name: paymentservice
   labels:
-      app: payment
-      tier: payment
+      app: paymentservice
 spec:
   replicas: 3
   selector:
     matchLabels:
-      tier: payment
+      app: paymentservice
   template:
     metadata:
       labels:
-        app: payment
-        tier: payment
+        app: paymentservice
     spec:
       containers:
-      - name: paymentservice
+      - name: server
         image: sapunidze/hipster-shop-paymentservice:v0.0.2
