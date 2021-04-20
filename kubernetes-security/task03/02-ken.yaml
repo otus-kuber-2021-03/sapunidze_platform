@@ -15,6 +15,6 @@ subjects:
   name: ken # Name is case sensitive
   namespace: dev
 roleRef:
-  kind: Role
+  kind: ClusterRole
   name: view
   apiGroup: rbac.authorization.k8s.io
