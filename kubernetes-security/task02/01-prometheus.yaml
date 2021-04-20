@@ -23,13 +23,13 @@ rules:
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: prometheus-global
   namespace: prometheus
 subjects:
 - kind: Group
-  name: system:serviceaccounts # Name is case sensitive
+  name: system:serviceaccounts:prometheus # Name is case sensitive
   apiGroup: rbac.authorization.k8s.io
   namespace: prometheus
 roleRef:
